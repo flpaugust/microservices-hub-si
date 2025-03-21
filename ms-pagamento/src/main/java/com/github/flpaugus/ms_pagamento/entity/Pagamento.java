@@ -27,7 +27,7 @@ public class Pagamento {
     private String codigoDeSeguranca;
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
-    private String status;
+    private Status status;
     @Column(nullable = false)
     private Long pedidoId;
     @Column(nullable = false)
