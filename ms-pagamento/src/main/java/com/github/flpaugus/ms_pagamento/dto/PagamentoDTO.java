@@ -1,5 +1,6 @@
 package com.github.flpaugus.ms_pagamento.dto;
 
+import com.github.flpaugus.ms_pagamento.entity.Pagamento;
 import com.github.flpaugus.ms_pagamento.entity.Status;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
@@ -42,6 +43,19 @@ public class PagamentoDTO {
     @NotNull(message = "não pode ser nulo")
     private Long formaDePagamentoId;
 
+    public PagamentoDTO(Pagamento entity) {
+        id = entity.getId();
+        valor = entity.getValor();
+        nome = entity.getNome();
+        numeroDoCartao = entity.getNumeroDoCartao();
+        validade = entity.getValidade();
+        codigoDeSeguranca = entity.getCodigoDeSeguranca();
+        status = entity.getStatus();
+        pedidoId = entity.getPedidoId()
+        formaDePagamentoId = entity.getFormaDePagamentoId();
+    }
 }
+
+
 
 
